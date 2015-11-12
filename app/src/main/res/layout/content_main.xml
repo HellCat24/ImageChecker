@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
@@ -15,32 +14,16 @@
         android:layout_height="match_parent"
         android:layout_centerInParent="true"/>
 
-    <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
-        android:id="@+id/blur_seek_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="64dp"
-        android:visibility="invisible"
-        app:dsb_max="10"
-        app:dsb_min="0"
-        />
-
     <net.i2p.android.ext.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/multiple_actions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true">
-
-        <net.i2p.android.ext.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_mirror_h"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_size="mini"
-            app:fab_title="Mirror Horizontal"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:textColor="@android:color/white"
+        app:fab_labelStyle="@style/menu_labels_style"
+        app:fab_labelsPosition="left">
 
         <net.i2p.android.ext.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_mirror_v"
@@ -49,12 +32,14 @@
             app:fab_size="mini"
             app:fab_title="Mirror Vertical"/>
 
+
         <net.i2p.android.ext.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_zoom"
+            android:id="@+id/btn_mirror_h"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:fab_labelsPosition="right"
             app:fab_size="mini"
-            app:fab_title="Zoom"/>
+            app:fab_title="Mirror Horizontal"/>
 
         <net.i2p.android.ext.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_black_and_white"
@@ -62,15 +47,32 @@
             android:layout_height="wrap_content"
             app:fab_size="mini"
             app:fab_title="Black and White"
-           />
+            />
+
+        <net.i2p.android.ext.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_blur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            app:fab_title="Blur"
+            />
+
+        <net.i2p.android.ext.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_zoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            app:fab_title="Zoom"/>
+
+
 
     </net.i2p.android.ext.floatingactionbutton.FloatingActionsMenu>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_message"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:text="@string/welcome_message"/>
 
 </RelativeLayout>
